@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.CardThumb {
+  height: 100px;
+  margin: 5px;
+}
+
+.Selected {
+  border: 2px solid #e22d2d;
+}
+
+.Hand {
+  position: absolute;
+  bottom: 0;
+}
+
+.Stables {
+  position: absolute;
+  top: 0;
+}
+
+.StablePreview {
+  border: 2px solid #008628;
+  font-size: small;
+  float:left;
+  padding: 5px;
+  margin: 10px;
+  text-align: left;
+}
+
+.SelectedStable {
+  background-color:rgb(38, 0, 209);
+}
+
+.Stable {
+  background-color: #393e47;
+  float:left;
+  padding: 5px;
+  margin: 10px;
+  text-align: left;
+}
+
+.PlayerList {
+  position: relative;
+  justify-content: right;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
