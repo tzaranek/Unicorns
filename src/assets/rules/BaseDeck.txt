@@ -1,0 +1,84 @@
+Baby Unicorn (Red)	Baby Unicorn	1
+Baby Unicorn (Pink)	Baby Unicorn	1
+Baby Unicorn (Orange)	Baby Unicorn	1
+Baby Unicorn (Yellow)	Baby Unicorn	1
+Baby Unicorn (Green)	Baby Unicorn	1
+Baby Unicorn (Blue)	Baby Unicorn	1
+Baby Unicorn (Purple)	Baby Unicorn	1
+Baby Unicorn (Black)	Baby Unicorn	1
+Baby Unicorn (White)	Baby Unicorn	1
+Baby Unicorn (Brown)	Baby Unicorn	1
+Baby Unicorn (Rainbow)	Baby Unicorn	1
+Baby Unicorn (Death)	Baby Unicorn	1
+Baby Narwhal	Baby Unicorn	1
+Basic Unicorn (Red)	Basic Unicorn	3
+Basic Unicorn (Orange)	Basic Unicorn	3
+Basic Unicorn (Yellow)	Basic Unicorn	3
+Basic Unicorn (Green)	Basic Unicorn	3
+Basic Unicorn (Blue)	Basic Unicorn	3
+Basic Unicorn (Indigo)	Basic Unicorn	3
+Basic Unicorn (Purple)	Basic Unicorn	3
+Narwhal	Basic Unicorn	1
+Rhinocorn	Magical Unicorn	1
+Extremely Fertile Unicorn	Magical Unicorn	1
+Magical Kittencorn	Magical Unicorn	1
+Stabby the Unicorn	Magical Unicorn	1
+Puppicorn	Magical Unicorn	1
+Rainbow Unicorn	Magical Unicorn	1
+Zombie Unicorn	Magical Unicorn	1
+Extremely Destructive Unicorn	Magical Unicorn	1
+Chainsaw Unicorn	Magical Unicorn	1
+Llamacorn	Magical Unicorn	1
+Americorn	Magical Unicorn	1
+Ginormous Unicorn	Magical Unicorn	1
+Seductive Unicorn	Magical Unicorn	1
+Angel Unicorn	Magical Unicorn	1
+Queen Bee Unicorn	Magical Unicorn	1
+Greedy Flying Unicorn	Magical Unicorn	1
+Annoying Flying Unicorn	Magical Unicorn	1
+Magical Flying Unicorn	Magical Unicorn	1
+Swift Flying Unicorn	Magical Unicorn	1
+Majestic Flying Unicorn	Magical Unicorn	1
+Unicorn Phoenix	Magical Unicorn	1
+Unicorn on the Cob	Magical Unicorn	1
+Black Knight Unicorn	Magical Unicorn	1
+Shark With a Horn	Magical Unicorn	1
+Shabby the Narwhal	Magical Unicorn	1
+Narwhal Torpedo	Magical Unicorn	1
+Alluring Narwhal	Magical Unicorn	1
+Mermaid Unicorn	Magical Unicorn	1
+Classy Narwhal	Magical Unicorn	1
+The Great Narwhal	Magical Unicorn	1
+Unicorn Poison	Magic	3
+Back Kick	Magic	3
+Change of Luck	Magic	2
+Glitter Tornado	Magic	2
+Unicorn Swap	Magic	2
+Re-Target	Magic	2
+Unfair Bargain	Magic	2
+Two-For-One	Magic	2
+Unicorn Shrinkray	Magic	1
+Targeted Destruction	Magic	1
+Mystical Vortex	Magic	1
+Good Deal	Magic	1
+Shake Up	Magic	1
+Blatant Thievery	Magic	1
+Reset Button	Magic	1
+Rainbow Mane	Upgrade	3
+Extra Tail	Upgrade	3
+Glitter Bomb	Upgrade	2
+Yay	Upgrade	2
+Unicorn Lasso	Upgrade	1
+Rainbow Aura	Upgrade	1
+Double Dutch	Upgrade	1
+Summoning Ritual	Upgrade	1
+Barbed Wire	Downgrade	1
+Pandamonium	Downgrade	1
+Sadistic Ritual	Downgrade	1
+Slowdown	Downgrade	1
+Nanny Cam	Downgrade	1
+Broken Stable	Downgrade	1
+Blinding Light	Downgrade	1
+Tiny Stable	Downgrade	1
+Neigh	Instant	14
+Super Neigh	Instant	1

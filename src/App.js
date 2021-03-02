@@ -1,5 +1,8 @@
 //import logo from './logo.svg';
-import cardBack from './cardBack.png'
+import cardBack from './assets/images/cardBack.png'
+import basic from './assets/images/16_Basic Unicorn (Green)'
+import nanny from './assets/images/78_Nanny Cam'
+import yay from './assets/images/67_Yay'
 import './App.css';
 
 function App() {
@@ -32,39 +35,35 @@ function App() {
 
         <p className="Stable">
           {/* Unicorns */}
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
           <br />
           {/* Up/Downgrades */}
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
+          <img src={nanny} className="CardThumb" alt="card" />
+          <img src={nanny} className="CardThumb" alt="card" />
         </p>
         <p>
         👷👷👷 Work in progress 👷👷👷
         </p>
         <p className="Stable">
-          {/* Unicorns */}
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <br />
           {/* Up/Downgrades */}
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
-          <img src={cardBack} className="CardThumb" alt="card" />
+          <img src={yay} className="CardThumb" alt="card" />
+          <br />
+          {/* Unicorns */}
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
+          <img src={basic} className="CardThumb" alt="card" />
         </p>
         <p className="Hand">
-        <img src={cardBack} className="CardThumb" alt="card" />
-        <img src={cardBack} className="CardThumb" alt="card" />
-        <img src={cardBack} className="CardThumb" alt="card" />
-        <img src={cardBack} className="CardThumb" alt="card" />
-        <img src={cardBack} className="CardThumb" alt="card" />
+        <img src={yay} className="CardThumb" alt="card" />
+        <img src={yay} className="CardThumb" alt="card" />
+        <img src={yay} className="CardThumb" alt="card" />
+        <img src={yay} className="CardThumb" alt="card" />
+        <img src={yay} className="CardThumb" alt="card" />
         </p>
       </header>
       
