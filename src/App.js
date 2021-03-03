@@ -14,50 +14,74 @@ class Game extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			stables: Array(4).fill(new Stable()),
+			stables: Array(4).fill(new Stable()), // TODO: add to the array as players join
 			hands: Array(4).fill(null)
 		};
+  }
 
-		
+  renderPreview(name, cardsInHand, unisInStable, upInStable, downInStable, selected)
+  {
+    var cName = "StablePreview";
+    cName = cName.concat(selected === true ? " SelectedStable" : "");
+
+    return(
+      <div className={cName}>
+        <b>{name}</b> <br />
+        Hand: {cardsInHand} <br />
+        Unicorns: {unisInStable} <br />
+        Upgrades: {upInStable} <br />
+        Downgrades: {downInStable} <br />
+      </div>
+    )
+  }
+
+  renderPreviews()
+  {
+    // TODO: Replace with the arrays containg the players' actual hands/stables
+    var names = ["Player 1", "Player 2", "Player 3"];
+    var cardsInHands = [3, 6, 5];
+    var unisInStables = [4, 2, 5];
+    var upInStables = [2, 0, 0];
+    var downInStables = [0, 0, 3];
+
+    var rows = [];
+    for (var i = 0; i < 3; ++i)
+    {
+      // By default, focus the first opponent for now.
+      rows.push(this.renderPreview(names[i], cardsInHands[i], unisInStables[i], upInStables[i], downInStables[i], i === 0 ? true : false));
+    }
+
+    return (
+      <div className="PreviewSidebar">
+        {rows}
+      </div>
+    )
   }
 
 	render()
 	{
 		return (
-			<div className="App">
+      <div className="App">
+        
+        {/* Bar on the left showing the other players' hand/stable info */}
+        {this.renderPreviews()}
+
+        {/* Main column in the center */}
 				<header className="App-header">
-					<div className="Stables">
-						<div className="StablePreview SelectedStable">
-							<b>Player 1</b> <br />
-							Hand: 3 <br />
-							Unicorns: 4 <br />
-							Upgrades: 2 <br />
-							Downgrades: 0 <br />
-						</div>
-						<div className="StablePreview">
-						<b>Player 2</b> <br />
-							Hand: 6 <br />
-							Unicorns: 2 <br />
-							Upgrades: 0 <br />
-							Downgrades: 0 <br />
-						</div>
-						<div className="StablePreview">
-						<b>Player 3</b> <br />
-							Hand: 5 <br />
-							Unicorns: 5 <br />
-							Upgrades: 0 <br />
-							Downgrades: 3 <br />
-						</div>
-					</div>
-	
+          
+          {/* Focused opponent's hand */}
+          <Hand cards={[new Card(0)]}></Hand>
+
+          {/* Focused opponent's stable */}
 					<Stable></Stable>
-					<p>
-					👷👷👷 Work in progress 👷👷👷
-					</p>
-					{/* {this.renderStable(0)} */}
+          
+					<br/>
+
+          {/* Own Stable */}
 					<Stable></Stable>
+
+          {/* Own Hand */}
 					<Hand cards={[new Card(0)]}></Hand>
-					{/* {this.renderHand(0)} */}
 				</header>
 				
 			</div>
@@ -72,6 +96,7 @@ class Stable extends React.Component
     this.state = {
 			unicorns: Array(10).fill(null),
 			upgrades: Array(10).fill(null),
+      downgrades: Array(10).fill(null),
 		};
 
 		const unis = this.state.unicorns.slice();
@@ -87,7 +112,6 @@ class Stable extends React.Component
 				<img src={yay} className="CardThumb" alt="card" />
 				<br />
 				{/* Unicorns */}
-				{/* {new Card()} */}
 				<img src={basic} className="CardThumb" alt="card" />
 				<img src={basic} className="CardThumb" alt="card" />
 				<img src={basic} className="CardThumb" alt="card" />
@@ -102,7 +126,7 @@ class Hand extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			cards: this.props.cards, //Set this to whatever is passed into the constructor!
+			cards: this.props.cards, // TODO: Probably want to initialize this to null and then call draw 5 times to start
 		};
   }
 
@@ -112,18 +136,11 @@ class Hand extends React.Component
 		this.state.cards.forEach(element => {
 			cards.push(<Card cardId={element.state.cardId}></Card>)
 		});
+
 		return(
 			<p className="Hand">
 				{cards}
 			</p>
-			
-			// <p className="Hand">
-			// 	<img src={yay} className="CardThumb" alt="card" />
-			// 	<img src={yay} className="CardThumb" alt="card" />
-			// 	<img src={yay} className="CardThumb" alt="card" />
-			// 	<img src={yay} className="CardThumb" alt="card" />
-			// 	<img src={yay} className="CardThumb" alt="card" />
-			// </p>
 		)
 	}
 }
@@ -133,7 +150,7 @@ class Card extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			cardId: this.props, //Set this to whatever is passed into the constructor!
+			cardId: this.props, // TODO: Construct the cards into the deck, which assigns the cardId and image path
 			cardPath: deck[0].path,
 		};
   }
@@ -141,7 +158,7 @@ class Card extends React.Component
 	render()
 	{
 		return (
-			<img src={baby} className="CardThumb" alt="card" />
+			<img src={baby} className="CardThumb" alt="card" /> // TODO: Set src from the json
 		);
 	}
 }

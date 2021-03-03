@@ -27,22 +27,26 @@
 }
 
 .Hand {
-  position: absolute;
-  bottom: 0;
-}
-
-.Stables {
-  position: absolute;
-  top: 0;
+  position: relative;
 }
 
 .StablePreview {
+  background-color: #393e47;
+  color: white;
   border: 2px solid #008628;
   font-size: small;
   float:left;
   padding: 5px;
   margin: 10px;
   text-align: left;
+}
+
+.PreviewSidebar {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
 }
 
 .SelectedStable {
@@ -58,7 +62,7 @@
 }
 
 .PlayerList {
-  position: relative;
+  position: left;
   justify-content: right;
 }
 
