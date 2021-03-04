@@ -18,8 +18,8 @@
 }
 
 .CardThumb {
-  height: 100px;
-  margin: 5px;
+  height: 125px;
+  margin-left: 10px;
 }
 
 .Selected {
@@ -34,7 +34,7 @@
   background-color: #393e47;
   color: white;
   border: 2px solid #008628;
-  font-size: small;
+  font-size: medium;
   float:left;
   padding: 5px;
   margin: 10px;

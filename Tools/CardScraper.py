@@ -4,7 +4,7 @@ import shutil
 import os
 from bs4 import BeautifulSoup
 
-baseImagePath = os.path.dirname(os.path.realpath(__file__)) + "/../assets/images/"
+baseImagePath = os.path.dirname(os.path.realpath(__file__)) + "/images/"
 site = "http://unstablegameswiki.com/index.php?title=Unstable_Unicorns_Base_Deck_(2nd_Edition)_-_Card_Previews"
 response = requests.get(site)
 soup = BeautifulSoup(response.text, 'html.parser')

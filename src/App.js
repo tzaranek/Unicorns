@@ -1,13 +1,10 @@
-//import logo from './logo.svg';
-import cardBack from './assets/images/cardBack.png'
-import basic from './assets/images/16_Basic Unicorn (Green)'
-import nanny from './assets/images/78_Nanny Cam'
-import yay from './assets/images/67_Yay'
-import baby from './assets/images/0_Baby Unicorn (Red)'
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import deck from './assets/rules/deck.json'
+
+//var imageArray = []
+//imageArray.push(baby);
+const iconPath = process.env.PUBLIC_URL;
 
 class Game extends React.Component
 {
@@ -15,7 +12,9 @@ class Game extends React.Component
     super(props);
     this.state = {
 			stables: Array(4).fill(new Stable()), // TODO: add to the array as players join
-			hands: Array(4).fill(null)
+			hands: Array(4).fill(null),
+			deck: Array(0).fill(null),
+			discard: Array(0).fill(null),
 		};
   }
 
@@ -70,7 +69,7 @@ class Game extends React.Component
 				<header className="App-header">
           
           {/* Focused opponent's hand */}
-          <Hand cards={[new Card(0)]}></Hand>
+          <Hand></Hand>
 
           {/* Focused opponent's stable */}
 					<Stable></Stable>
@@ -81,7 +80,7 @@ class Game extends React.Component
 					<Stable></Stable>
 
           {/* Own Hand */}
-					<Hand cards={[new Card(0)]}></Hand>
+					<Hand></Hand>
 				</header>
 				
 			</div>
@@ -109,13 +108,13 @@ class Stable extends React.Component
 		return (
 			<p className="Stable">
 				{/* Up/Downgrades */}
-				<img src={yay} className="CardThumb" alt="card" />
+				<img src={deck[69].path} className="CardThumb" alt="card" />
 				<br />
 				{/* Unicorns */}
-				<img src={basic} className="CardThumb" alt="card" />
-				<img src={basic} className="CardThumb" alt="card" />
-				<img src={basic} className="CardThumb" alt="card" />
-				<img src={basic} className="CardThumb" alt="card" />
+				<img src={deck[13].path} className="CardThumb" alt="card" />
+				<img src={deck[13].path} className="CardThumb" alt="card" />
+				<img src={deck[13].path} className="CardThumb" alt="card" />
+				<img src={deck[13].path} className="CardThumb" alt="card" />
 			</p>
 		)
 	}
@@ -126,16 +125,25 @@ class Hand extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			cards: this.props.cards, // TODO: Probably want to initialize this to null and then call draw 5 times to start
+			cards: Array(0).fill(null), // TODO: Probably want to initialize this to null and then call draw 5 times to start
 		};
   }
+
+	draw()
+	{
+		this.state.cards.push(new Card(0));
+	}
 
 	render()
 	{
 		var cards = [];
-		this.state.cards.forEach(element => {
-			cards.push(<Card cardId={element.state.cardId}></Card>)
-		});
+		this.draw();
+		if (this.state.cards.length > 0)
+		{
+			this.state.cards.forEach(element => {
+				cards.push(<Card cardId={element.state.cardId}></Card>)
+			});
+		}
 
 		return(
 			<p className="Hand">
@@ -157,8 +165,12 @@ class Card extends React.Component
 
 	render()
 	{
+		var imgPath = this.state.cardPath;
+		var pub = {process}
+		var a = iconPath;
+		imgPath = imgPath.concat(pub);
 		return (
-			<img src={baby} className="CardThumb" alt="card" /> // TODO: Set src from the json
+			<img src={deck[1].path} className="CardThumb" alt="card" /> // TODO: Set src from the json
 		);
 	}
 }

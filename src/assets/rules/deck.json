@@ -1,423 +1,506 @@
 {
     "0": {
         "name": "Baby Unicorn (Red)",
-        "path": "'./assets/images/0_Baby Unicorn (Red)'",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/0_Baby Unicorn (Red)"
     },
     "1": {
         "name": "Baby Unicorn (Pink)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/1_Baby Unicorn (Pink)"
     },
     "2": {
         "name": "Baby Unicorn (Orange)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/2_Baby Unicorn (Orange)"
     },
     "3": {
         "name": "Baby Unicorn (Yellow)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/3_Baby Unicorn (Yellow)"
     },
     "4": {
         "name": "Baby Unicorn (Green)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/4_Baby Unicorn (Green)"
     },
     "5": {
         "name": "Baby Unicorn (Blue)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/5_Baby Unicorn (Blue)"
     },
     "6": {
         "name": "Baby Unicorn (Purple)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/6_Baby Unicorn (Purple)"
     },
     "7": {
         "name": "Baby Unicorn (Black)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/7_Baby Unicorn (Black)"
     },
     "8": {
         "name": "Baby Unicorn (White)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/8_Baby Unicorn (White)"
     },
     "9": {
         "name": "Baby Unicorn (Brown)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/9_Baby Unicorn (Brown)"
     },
     "10": {
         "name": "Baby Unicorn (Rainbow)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/10_Baby Unicorn (Rainbow)"
     },
     "11": {
         "name": "Baby Unicorn (Death)",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/11_Baby Unicorn (Death)"
     },
     "12": {
         "name": "Baby Narwhal",
         "class": "Baby Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/12_Baby Narwhal"
     },
     "13": {
         "name": "Basic Unicorn (Red)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/13_Basic Unicorn (Red)"
     },
     "14": {
         "name": "Basic Unicorn (Orange)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/14_Basic Unicorn (Orange)"
     },
     "15": {
         "name": "Basic Unicorn (Yellow)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/15_Basic Unicorn (Yellow)"
     },
     "16": {
         "name": "Basic Unicorn (Green)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/16_Basic Unicorn (Green)"
     },
     "17": {
         "name": "Basic Unicorn (Blue)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/17_Basic Unicorn (Blue)"
     },
     "18": {
         "name": "Basic Unicorn (Indigo)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/18_Basic Unicorn (Indigo)"
     },
     "19": {
         "name": "Basic Unicorn (Purple)",
         "class": "Basic Unicorn",
-        "count": "3"
+        "count": "3",
+        "path": "./images/19_Basic Unicorn (Purple)"
     },
     "20": {
         "name": "Narwhal",
         "class": "Basic Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/20_Narwhal"
     },
     "21": {
-        "name": "Rhinocorn",
+        "name": "Alluring Narwhal",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/21_Alluring Narwhal"
     },
     "22": {
-        "name": "Extremely Fertile Unicorn",
+        "name": "Americorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/22_Americorn"
     },
     "23": {
-        "name": "Magical Kittencorn",
+        "name": "Annoying Flying Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/23_Annoying Flying Unicorn"
     },
     "24": {
-        "name": "Stabby the Unicorn",
+        "name": "Black Knight Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/24_Black Knight Unicorn"
     },
     "25": {
-        "name": "Puppicorn",
+        "name": "Chainsaw Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/25_Chainsaw Unicorn"
     },
     "26": {
-        "name": "Rainbow Unicorn",
+        "name": "Classy Narwhal",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/26_Classy Narwhal"
     },
     "27": {
-        "name": "Zombie Unicorn",
+        "name": "Dark Angel Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/27_Dark Angel Unicorn"
     },
     "28": {
         "name": "Extremely Destructive Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/28_Extremely Destructive Unicorn"
     },
     "29": {
-        "name": "Chainsaw Unicorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "30": {
-        "name": "Llamacorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "31": {
-        "name": "Americorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "32": {
         "name": "Ginormous Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/29_Ginormous Unicorn"
     },
-    "33": {
-        "name": "Seductive Unicorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "34": {
-        "name": "Angel Unicorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "35": {
-        "name": "Queen Bee Unicorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "36": {
+    "30": {
         "name": "Greedy Flying Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/30_Greedy Flying Unicorn"
     },
-    "37": {
-        "name": "Annoying Flying Unicorn",
+    "31": {
+        "name": "Llamacorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/31_Llamacorn"
     },
-    "38": {
+    "32": {
         "name": "Magical Flying Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/32_Magical Flying Unicorn"
     },
-    "39": {
-        "name": "Swift Flying Unicorn",
+    "33": {
+        "name": "Magical Kittencorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/33_Magical Kittencorn"
     },
-    "40": {
+    "34": {
         "name": "Majestic Flying Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/34_Majestic Flying Unicorn"
+    },
+    "35": {
+        "name": "Mother Goose Unicorn",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/35_Mother Goose Unicorn"
+    },
+    "36": {
+        "name": "Mermaid Unicorn",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/36_Mermaid Unicorn"
+    },
+    "37": {
+        "name": "Narwhal Torpedo",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/37_Narwhal Torpedo"
+    },
+    "38": {
+        "name": "Necromancer Unicorn",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/38_Necromancer Unicorn"
+    },
+    "39": {
+        "name": "Queen Bee Unicorn",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/39_Queen Bee Unicorn"
+    },
+    "40": {
+        "name": "Rainbow Unicorn",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/40_Rainbow Unicorn"
     },
     "41": {
-        "name": "Unicorn Phoenix",
+        "name": "Rhinocorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/41_Rhinocorn"
     },
     "42": {
-        "name": "Unicorn on the Cob",
+        "name": "Seductive Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/42_Seductive Unicorn"
     },
     "43": {
-        "name": "Black Knight Unicorn",
+        "name": "Shabby the Narwhal",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/43_Shabby the Narwhal"
     },
     "44": {
         "name": "Shark With a Horn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/44_Shark With a Horn"
     },
     "45": {
-        "name": "Shabby the Narwhal",
+        "name": "Stabby the Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/45_Stabby the Unicorn"
     },
     "46": {
-        "name": "Narwhal Torpedo",
+        "name": "Swift Flying Unicorn",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/46_Swift Flying Unicorn"
     },
     "47": {
-        "name": "Alluring Narwhal",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "48": {
-        "name": "Mermaid Unicorn",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "49": {
-        "name": "Classy Narwhal",
-        "class": "Magical Unicorn",
-        "count": "1"
-    },
-    "50": {
         "name": "The Great Narwhal",
         "class": "Magical Unicorn",
-        "count": "1"
+        "count": "1",
+        "path": "./images/47_The Great Narwhal"
+    },
+    "48": {
+        "name": "Unicorn on the Cob",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/48_Unicorn on the Cob"
+    },
+    "49": {
+        "name": "Unicorn Oracle",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/49_Unicorn Oracle"
+    },
+    "50": {
+        "name": "Unicorn Phoenix",
+        "class": "Magical Unicorn",
+        "count": "1",
+        "path": "./images/50_Unicorn Phoenix"
     },
     "51": {
-        "name": "Unicorn Poison",
-        "class": "Magic",
-        "count": "3"
-    },
-    "52": {
         "name": "Back Kick",
         "class": "Magic",
-        "count": "3"
+        "count": "3",
+        "path": "./images/51_Back Kick"
+    },
+    "52": {
+        "name": "Blatant Thievery",
+        "class": "Magic",
+        "count": "1",
+        "path": "./images/52_Blatant Thievery"
     },
     "53": {
         "name": "Change of Luck",
         "class": "Magic",
-        "count": "2"
+        "count": "2",
+        "path": "./images/53_Change of Luck"
     },
     "54": {
         "name": "Glitter Tornado",
         "class": "Magic",
-        "count": "2"
+        "count": "2",
+        "path": "./images/54_Glitter Tornado"
     },
     "55": {
-        "name": "Unicorn Swap",
-        "class": "Magic",
-        "count": "2"
-    },
-    "56": {
-        "name": "Re-Target",
-        "class": "Magic",
-        "count": "2"
-    },
-    "57": {
-        "name": "Unfair Bargain",
-        "class": "Magic",
-        "count": "2"
-    },
-    "58": {
-        "name": "Two-For-One",
-        "class": "Magic",
-        "count": "2"
-    },
-    "59": {
-        "name": "Unicorn Shrinkray",
-        "class": "Magic",
-        "count": "1"
-    },
-    "60": {
-        "name": "Targeted Destruction",
-        "class": "Magic",
-        "count": "1"
-    },
-    "61": {
-        "name": "Mystical Vortex",
-        "class": "Magic",
-        "count": "1"
-    },
-    "62": {
         "name": "Good Deal",
         "class": "Magic",
-        "count": "1"
+        "count": "1",
+        "path": "./images/55_Good Deal"
     },
-    "63": {
-        "name": "Shake Up",
+    "56": {
+        "name": "Kiss of Life",
         "class": "Magic",
-        "count": "1"
+        "count": "1",
+        "path": "./images/56_Kiss of Life"
     },
-    "64": {
-        "name": "Blatant Thievery",
+    "57": {
+        "name": "Mystical Vortex",
         "class": "Magic",
-        "count": "1"
+        "count": "1",
+        "path": "./images/57_Mystical Vortex"
     },
-    "65": {
+    "58": {
+        "name": "Re-Target",
+        "class": "Magic",
+        "count": "2",
+        "path": "./images/58_Re-Target"
+    },
+    "59": {
         "name": "Reset Button",
         "class": "Magic",
-        "count": "1"
+        "count": "1",
+        "path": "./images/59_Reset Button"
+    },
+    "60": {
+        "name": "Shake Up",
+        "class": "Magic",
+        "count": "1",
+        "path": "./images/60_Shake Up"
+    },
+    "61": {
+        "name": "Targeted Destruction",
+        "class": "Magic",
+        "count": "1",
+        "path": "./images/61_Targeted Destruction"
+    },
+    "62": {
+        "name": "Two-For-One",
+        "class": "Magic",
+        "count": "2",
+        "path": "./images/62_Two-For-One"
+    },
+    "63": {
+        "name": "Unfair Bargain",
+        "class": "Magic",
+        "count": "2",
+        "path": "./images/63_Unfair Bargain"
+    },
+    "64": {
+        "name": "Unicorn Poison",
+        "class": "Magic",
+        "count": "3",
+        "path": "./images/64_Unicorn Poison"
+    },
+    "65": {
+        "name": "Unicorn Swap",
+        "class": "Magic",
+        "count": "2",
+        "path": "./images/65_Unicorn Swap"
     },
     "66": {
-        "name": "Rainbow Mane",
+        "name": "Caffeine Overload",
         "class": "Upgrade",
-        "count": "3"
+        "count": "1",
+        "path": "./images/66_Caffeine Overload"
     },
     "67": {
-        "name": "Extra Tail",
+        "name": "Claw Machine",
         "class": "Upgrade",
-        "count": "3"
+        "count": "3",
+        "path": "./images/67_Claw Machine"
     },
     "68": {
-        "name": "Glitter Bomb",
-        "class": "Upgrade",
-        "count": "2"
-    },
-    "69": {
-        "name": "Yay",
-        "class": "Upgrade",
-        "count": "2"
-    },
-    "70": {
-        "name": "Unicorn Lasso",
-        "class": "Upgrade",
-        "count": "1"
-    },
-    "71": {
-        "name": "Rainbow Aura",
-        "class": "Upgrade",
-        "count": "1"
-    },
-    "72": {
         "name": "Double Dutch",
         "class": "Upgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/68_Double Dutch"
+    },
+    "69": {
+        "name": "Glitter Bomb",
+        "class": "Upgrade",
+        "count": "2",
+        "path": "./images/69_Glitter Bomb"
+    },
+    "70": {
+        "name": "Rainbow Aura",
+        "class": "Upgrade",
+        "count": "1",
+        "path": "./images/70_Rainbow Aura"
+    },
+    "71": {
+        "name": "Rainbow Lasso",
+        "class": "Upgrade",
+        "count": "1",
+        "path": "./images/71_Rainbow Lasso"
+    },
+    "72": {
+        "name": "Stable Artillery",
+        "class": "Upgrade",
+        "count": "3",
+        "path": "./images/72_Stable Artillery"
     },
     "73": {
-        "name": "Summoning Ritual",
+        "name": "Yay",
         "class": "Upgrade",
-        "count": "1"
+        "count": "2",
+        "path": "./images/73_Yay"
     },
     "74": {
         "name": "Barbed Wire",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/74_Barbed Wire"
     },
     "75": {
         "name": "Pandamonium",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/75_Pandamonium"
     },
     "76": {
         "name": "Sadistic Ritual",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/76_Sadistic Ritual"
     },
     "77": {
         "name": "Slowdown",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/77_Slowdown"
     },
     "78": {
         "name": "Nanny Cam",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/78_Nanny Cam"
     },
     "79": {
         "name": "Broken Stable",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/79_Broken Stable"
     },
     "80": {
         "name": "Blinding Light",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/80_Blinding Light"
     },
     "81": {
         "name": "Tiny Stable",
         "class": "Downgrade",
-        "count": "1"
+        "count": "1",
+        "path": "./images/81_Tiny Stable"
     },
     "82": {
         "name": "Neigh",
         "class": "Instant",
-        "count": "14"
+        "count": "14",
+        "path": "./images/82_Neigh"
     },
     "83": {
         "name": "Super Neigh",
         "class": "Instant",
-        "count": "1"
+        "count": "1",
+        "path": "./images/83_Super Neigh"
     }
 }
