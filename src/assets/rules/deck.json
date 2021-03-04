@@ -1,4 +1,10 @@
 {
+    "-1": {
+        "name": "Card Back",
+        "class": "Meta",
+        "count": "999",
+        "path": "./images/-1_cardBack"
+    },
     "0": {
         "name": "Baby Unicorn (Red)",
         "class": "Baby Unicorn",

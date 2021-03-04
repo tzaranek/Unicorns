@@ -2,10 +2,6 @@ import './App.css';
 import React from 'react';
 import deck from './assets/rules/deck.json'
 
-//var imageArray = []
-//imageArray.push(baby);
-const iconPath = process.env.PUBLIC_URL;
-
 class Game extends React.Component
 {
 	constructor(props) {
@@ -20,8 +16,7 @@ class Game extends React.Component
 
   renderPreview(name, cardsInHand, unisInStable, upInStable, downInStable, selected)
   {
-    var cName = "StablePreview";
-    cName = cName.concat(selected === true ? " SelectedStable" : "");
+    var cName = "StablePreview".concat(selected === true ? " SelectedStable" : "");
 
     return(
       <div className={cName}>
@@ -99,7 +94,7 @@ class Stable extends React.Component
 		};
 
 		const unis = this.state.unicorns.slice();
-		unis[0] = new Card();
+		unis[0] = new Card(0);
 		this.setState({unicorns: unis});
   }
 
@@ -131,7 +126,7 @@ class Hand extends React.Component
 
 	draw()
 	{
-		this.state.cards.push(new Card(0));
+		this.state.cards.push(new Card(-1));
 	}
 
 	render()
@@ -158,19 +153,14 @@ class Card extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			cardId: this.props, // TODO: Construct the cards into the deck, which assigns the cardId and image path
-			cardPath: deck[0].path,
+			cardId: this.props,
 		};
   }
 
 	render()
 	{
-		var imgPath = this.state.cardPath;
-		var pub = {process}
-		var a = iconPath;
-		imgPath = imgPath.concat(pub);
 		return (
-			<img src={deck[1].path} className="CardThumb" alt="card" /> // TODO: Set src from the json
+			<img src={deck[this.state.cardId.cardId].path} className="CardThumb" alt="card" />
 		);
 	}
 }
