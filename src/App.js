@@ -7,19 +7,48 @@ class Game extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			stables: Array(4).fill(new Stable()), // TODO: add to the array as players join
-			hands: Array(4).fill(null),
+      names: Array(0).fill(null),
+			stables: Array(0).fill(null), // TODO: add to the array as players join
+			hands: Array(0).fill(null),
 			deck: Array(0).fill(null),
 			discard: Array(0).fill(null),
+      focusedStable: null,
 		};
+
+    var tmpArray = this.state.names;
+    tmpArray.push("Player 0");
+    tmpArray.push("Player 1");
+    tmpArray.push("Player 2");
+    tmpArray.push("Player 3");
+
+    // Hardcoded hands to test switching focus
+    // TODO: Make these from the deck
+    tmpArray = this.state.hands;
+    tmpArray.push([5, 10, 15, 20, 25]);
+    tmpArray.push([30, 35, 40, 45, 50]);
+    tmpArray.push([1, 2, 3, 4, 5]);
+    tmpArray.push([61, 62]);
+    //this.setState({hands: tmpArray})
+
+    var tmpArray2 = this.state.stables;
+    for (var i = 0; i < this.state.names.length; ++i)
+    {
+      var tmpStable = new Stable()
+      tmpStable.state.unicorns = tmpArray[i];
+      tmpStable.state.upgrades = tmpArray[i];
+      tmpStable.state.downgrades = tmpArray[i];
+      tmpArray2.push(tmpStable);
+    }
+    // TODO: Why doesn't this work?
+    this.setState({stables: tmpArray2});
   }
 
-  renderPreview(name, cardsInHand, unisInStable, upInStable, downInStable, selected)
+  renderPreview(name, cardsInHand, unisInStable, upInStable, downInStable)
   {
-    var cName = "StablePreview".concat(selected === true ? " SelectedStable" : "");
+    var cName = "StablePreview".concat(this.state.focusedStable === name ? " SelectedStable" : "");
 
     return(
-      <div className={cName}>
+      <div id={name} className={cName} onClick={() => this.setState({focusedStable: name})}>
         <b>{name}</b> <br />
         Hand: {cardsInHand} <br />
         Unicorns: {unisInStable} <br />
@@ -32,22 +61,23 @@ class Game extends React.Component
   renderPreviews()
   {
     // TODO: Replace with the arrays containg the players' actual hands/stables
-    var names = ["Player 1", "Player 2", "Player 3"];
-    var cardsInHands = [3, 6, 5];
-    var unisInStables = [4, 2, 5];
-    var upInStables = [2, 0, 0];
-    var downInStables = [0, 0, 3];
+    var unisInStables = [4, 2, 5, 1];
+    var upInStables = [2, 0, 0, 1];
+    var downInStables = [0, 0, 3, 1];
 
     var rows = [];
-    for (var i = 0; i < 3; ++i)
+    // 0 is us!
+    for (var i = 0; i < this.state.names.length; ++i)
     {
       // By default, focus the first opponent for now.
-      rows.push(this.renderPreview(names[i], cardsInHands[i], unisInStables[i], upInStables[i], downInStables[i], i === 0 ? true : false));
+      rows.push(this.renderPreview(this.state.names[i], this.state.hands[i].length, unisInStables[i], upInStables[i], downInStables[i]));
     }
 
     return (
       <div className="PreviewSidebar">
         {rows}
+        <br/>
+        <Card id="Deck" cardId={-1} on></Card>
       </div>
     )
   }
@@ -64,18 +94,22 @@ class Game extends React.Component
 				<header className="App-header">
           
           {/* Focused opponent's hand */}
-          <Hand></Hand>
+          <Hand cardsInHand={this.state.hands[3]}></Hand>
 
           {/* Focused opponent's stable */}
-					<Stable></Stable>
+					<Stable uni={this.state.stables[3].state.unicorns}
+                  upg={this.state.stables[3].state.upgrades}
+                  dg={this.state.stables[3].state.downgrades}></Stable>
           
 					<br/>
 
           {/* Own Stable */}
-					<Stable></Stable>
+					<Stable uni={this.state.stables[0].state.unicorns}
+                  upg={this.state.stables[0].state.upgrades}
+                  dg={this.state.stables[0].state.downgrades}></Stable>
 
           {/* Own Hand */}
-					<Hand></Hand>
+					<Hand cardsInHand={this.state.hands[0]}></Hand>
 				</header>
 				
 			</div>
@@ -87,29 +121,56 @@ class Stable extends React.Component
 {
 	constructor(props) {
     super(props);
-    this.state = {
-			unicorns: Array(10).fill(null),
-			upgrades: Array(10).fill(null),
-      downgrades: Array(10).fill(null),
-		};
+    if (this.props)
+    {
+      this.state = {
+        unicorns: this.props.uni,
+        upgrades: this.props.upg,
+        downgrades: this.props.dg,
+      }
+    }
+    else
+    {
+      this.state = {
+        unicorns: null,
+        upgrades: null,
+        downgrades: null,
+      }
+    }
 
-		const unis = this.state.unicorns.slice();
-		unis[0] = new Card(0);
-		this.setState({unicorns: unis});
+
+		// const unis = this.state.unicorns.slice();
+		// unis[0] = new Card(0);
+		//this.setState({unicorns: unis});
+  }
+
+  cardsHtml(cards)
+  {
+    var tmp = [];
+    if (cards.length > 0)
+		{
+			cards.forEach(element => {
+				tmp.push(<Card cardId={element}></Card>)
+			});
+		}
+
+    return tmp;
   }
 
 	render()
 	{
+    var grades = this.cardsHtml(this.state.upgrades);
+    grades.concat(this.cardsHtml(this.state.downgrades));
+    var corns = this.cardsHtml(this.state.unicorns);
+
+
 		return (
 			<p className="Stable">
 				{/* Up/Downgrades */}
-				<img src={deck[69].path} className="CardThumb" alt="card" />
+				{grades}
 				<br />
 				{/* Unicorns */}
-				<img src={deck[13].path} className="CardThumb" alt="card" />
-				<img src={deck[13].path} className="CardThumb" alt="card" />
-				<img src={deck[13].path} className="CardThumb" alt="card" />
-				<img src={deck[13].path} className="CardThumb" alt="card" />
+				{corns}
 			</p>
 		)
 	}
@@ -120,23 +181,17 @@ class Hand extends React.Component
 	constructor(props) {
     super(props);
     this.state = {
-			cards: Array(0).fill(null), // TODO: Probably want to initialize this to null and then call draw 5 times to start
+			cards: this.props.cardsInHand,
 		};
   }
-
-	draw()
-	{
-		this.state.cards.push(new Card(-1));
-	}
 
 	render()
 	{
 		var cards = [];
-		this.draw();
 		if (this.state.cards.length > 0)
 		{
 			this.state.cards.forEach(element => {
-				cards.push(<Card cardId={element.state.cardId}></Card>)
+				cards.push(<Card cardId={element}></Card>)
 			});
 		}
 
