@@ -28,7 +28,7 @@ class Game extends React.Component
     tmpArray.push([30, 35, 40, 45, 50]);
     tmpArray.push([1, 2, 3, 4, 5]);
     tmpArray.push([61, 62]);
-    //this.setState({hands: tmpArray})
+    this.setState({hands: tmpArray})
 
     var tmpArray2 = this.state.stables;
     for (var i = 0; i < this.state.names.length; ++i)
@@ -39,7 +39,6 @@ class Game extends React.Component
       tmpStable.state.downgrades = tmpArray[i];
       tmpArray2.push(tmpStable);
     }
-    // TODO: Why doesn't this work?
     this.setState({stables: tmpArray2});
   }
 
@@ -137,11 +136,6 @@ class Stable extends React.Component
         downgrades: null,
       }
     }
-
-
-		// const unis = this.state.unicorns.slice();
-		// unis[0] = new Card(0);
-		//this.setState({unicorns: unis});
   }
 
   cardsHtml(cards)
