@@ -2,85 +2,85 @@
     "-1": {
         "name": "Card Back",
         "class": "Meta",
-        "count": "999",
+        "count": "0",
         "path": "./images/-1_cardBack"
     },
     "0": {
         "name": "Baby Unicorn (Red)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/0_Baby Unicorn (Red)"
     },
     "1": {
         "name": "Baby Unicorn (Pink)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/1_Baby Unicorn (Pink)"
     },
     "2": {
         "name": "Baby Unicorn (Orange)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/2_Baby Unicorn (Orange)"
     },
     "3": {
         "name": "Baby Unicorn (Yellow)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/3_Baby Unicorn (Yellow)"
     },
     "4": {
         "name": "Baby Unicorn (Green)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/4_Baby Unicorn (Green)"
     },
     "5": {
         "name": "Baby Unicorn (Blue)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/5_Baby Unicorn (Blue)"
     },
     "6": {
         "name": "Baby Unicorn (Purple)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/6_Baby Unicorn (Purple)"
     },
     "7": {
         "name": "Baby Unicorn (Black)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/7_Baby Unicorn (Black)"
     },
     "8": {
         "name": "Baby Unicorn (White)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/8_Baby Unicorn (White)"
     },
     "9": {
         "name": "Baby Unicorn (Brown)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/9_Baby Unicorn (Brown)"
     },
     "10": {
         "name": "Baby Unicorn (Rainbow)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/10_Baby Unicorn (Rainbow)"
     },
     "11": {
         "name": "Baby Unicorn (Death)",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/11_Baby Unicorn (Death)"
     },
     "12": {
         "name": "Baby Narwhal",
         "class": "Baby Unicorn",
-        "count": "1",
+        "count": "0",
         "path": "./images/12_Baby Narwhal"
     },
     "13": {
