@@ -277,7 +277,7 @@ function Card(props)
     path = props.cardInfo["path"]
   }
   return (
-    <img src={path} className="CardThumb" alt="card" />
+    <img src={path} className="CardThumb zoom" alt="card" />
   );
 }
 
