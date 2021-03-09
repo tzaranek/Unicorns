@@ -17,6 +17,7 @@ class Game extends React.Component
     this.startGame = this.startGame.bind(this)
     this.addPlayer = this.addPlayer.bind(this)
     this.endTurn = this.endTurn.bind(this)
+    this.dealCard = this.dealCard.bind(this)
   }
 
   // https://stackoverflow.com/a/2450976
@@ -50,9 +51,13 @@ class Game extends React.Component
     this.setState({turnId : tmp, focusedStableId : tmp})
   }
 
-  dealCard(id)
+  dealCard()
   {
-    
+    var c = this.state.deck.pop();
+    var tmpPlayers = this.state.Players.slice()
+
+    tmpPlayers[this.state.turnId].hand.push(c);
+    this.setState({Players : tmpPlayers});
   }
 
   startGame()
@@ -151,7 +156,7 @@ class Game extends React.Component
       <div className="PreviewSidebar">
         {rows}
         <br/>
-        <Card id="Deck" cardId={-1}></Card>
+        <Card id="Deck" clickFunc={this.dealCard} cardId={-1}></Card>
         <br/>
         <button onClick={this.endTurn}>End Turn</button>
       </div>
@@ -266,18 +271,21 @@ function Card(props)
 {
   // TODO: Remove debug vars
   var path = null;
+  var cName = null;
   if (props.cardId === -1)
   {
     var id = props.cardId;
     var c = deckJSON[id];
     path = c.path;
+    cName = "CardThumb"
   }
   else
   {
     path = props.cardInfo["path"]
+    cName = "CardThumb zoom"
   }
   return (
-    <img src={path} className="CardThumb zoom" alt="card" />
+    <img src={path} className={cName} onClick={props.clickFunc} alt="card" />
   );
 }
 
