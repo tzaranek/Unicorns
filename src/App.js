@@ -247,6 +247,10 @@ function Stable(props)
   var corns = cardsHtml(props.uni);
 
 
+    grades.push(<CardPlaceholder></CardPlaceholder>)
+    corns.push(<CardPlaceholder></CardPlaceholder>)
+
+
   return (
     <p className="Stable">
       {/* Up/Downgrades */}
@@ -286,6 +290,13 @@ function Card(props)
   }
   return (
     <img src={path} className={cName} onClick={props.clickFunc} alt="card" />
+  );
+}
+
+function CardPlaceholder(props)
+{
+  return (
+    <img src={deckJSON[-2].path} className={"CardThumb"} alt="card" />
   );
 }
 

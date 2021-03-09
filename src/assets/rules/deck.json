@@ -1,4 +1,10 @@
 {
+    "-2": {
+        "name": "Card Border",
+        "class": "Meta",
+        "count": "0",
+        "path": "./images/-2_cardBorder"
+    },
     "-1": {
         "name": "Card Back",
         "class": "Meta",
