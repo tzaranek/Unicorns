@@ -18,6 +18,8 @@ class Game extends React.Component
     this.addPlayer = this.addPlayer.bind(this)
     this.endTurn = this.endTurn.bind(this)
     this.dealCard = this.dealCard.bind(this)
+    this.allowDrop = this.allowDrop.bind(this)
+    this.onDragStart = this.dragStart.bind(this)
   }
 
   // https://stackoverflow.com/a/2450976
@@ -49,6 +51,37 @@ class Game extends React.Component
     }
 
     this.setState({turnId : tmp, focusedStableId : tmp})
+  }
+
+  allowDrop(event)
+  {
+    console.log("allowDrop")
+    var draggedCardInfo = event.dataTransfer.getData("text/html");
+    draggedCardInfo = draggedCardInfo.split("_")
+    var draggedCardId = draggedCardInfo[0]
+    var draggedCardHand = draggedCardInfo[1]
+
+    var a = event.currentTarget.id.split("_");
+    var tmpPlayers = this.state.Players.slice()
+    tmpPlayers[a[0]].stable[a[1]].push(deckJSON[draggedCardId])
+    
+    var hand = tmpPlayers[draggedCardHand].hand;
+    for (var i = 0; i < hand.length; ++i)
+    {
+      if (hand[i].id === draggedCardId)
+      {
+        hand.splice(i, 1)
+      }
+    }
+
+    this.setState({Players : tmpPlayers})
+  }
+
+  dragStart(event)
+  {
+    console.log("Drag Start")
+    var playerAndCard = event.target.id + "_" + event.target.pId
+    event.dataTransfer.setData('Text/html', playerAndCard);
   }
 
   dealCard()
@@ -156,7 +189,9 @@ class Game extends React.Component
       <div className="PreviewSidebar">
         {rows}
         <br/>
-        <Card id="Deck" clickFunc={this.dealCard} cardId={-1}></Card>
+        <Card id="Deck" clickFunc={this.dealCard} 
+        cardInfo={deckJSON["-1"]}
+        cardId={-1}></Card>
         <br/>
         <button onClick={this.endTurn}>End Turn</button>
       </div>
@@ -194,22 +229,32 @@ class Game extends React.Component
           <header className="App-header">
             
             {/* Focused opponent's hand */}
-            <Hand cardsInHand={focusedPlayer.hand}></Hand>
+            <Hand cardsInHand={focusedPlayer.hand}
+                  player={focusID}
+                  dragStartEvent={this.dragStart}
+                  dragEndEvent={this.dragEnd}></Hand>
 
             {/* Focused opponent's stable */}
-            {<Stable uni={focusedPlayer.stable["unicorns"]}
+            {<Stable player={focusID}
+                    dropEvent={this.allowDrop}
+                    uni={focusedPlayer.stable["unicorns"]}
                     ug={focusedPlayer.stable["upgrades"]}
                     dg={focusedPlayer.stable["downgrades"]}></Stable>}
             
             <br/>
 
             {/* Own Stable */}
-            {<Stable uni={myPlayer.stable["unicorns"]}
+            {<Stable player={myID} 
+                    dropEvent={this.allowDrop}
+                    uni={myPlayer.stable["unicorns"]}
                     ug={myPlayer.stable["upgrades"]}
                     dg={myPlayer.stable["downgrades"]}></Stable>}
 
             {/* Own Hand */}
-            <Hand cardsInHand={myPlayer.hand}></Hand>
+            <Hand cardsInHand={myPlayer.hand}
+                    player={myID}                     
+                    dragStartEvent={this.dragStart}
+                    dragEndEvent={this.dragEnd}></Hand>
           </header>
           
         </div>
@@ -227,13 +272,13 @@ class Game extends React.Component
 	}
 }
 
-function cardsHtml(cards)
+function stableCardsHtml(cards, dragStart, dragEnd)
 {
   var tmp = [];
   if (cards.length > 0)
   {
     cards.forEach(element => {
-      tmp.push(<Card id="RealCard" cardInfo={element}></Card>)
+      tmp.push(<Card draggable="false" id="RealCard" cardInfo={element} onDragStart={dragStart} onDragEnd={dragEnd} alt="handCard"></Card>)
     });
   }
 
@@ -242,13 +287,20 @@ function cardsHtml(cards)
 
 function Stable(props)
 {
-  var grades = cardsHtml(props.ug);
-  grades.concat(cardsHtml(props.dg));
-  var corns = cardsHtml(props.uni);
+  var grades = stableCardsHtml(props.ug, props.dragStartEvent, props.dragEndEvent);
+  grades.concat(stableCardsHtml(props.dg));
+  var corns = stableCardsHtml(props.uni);
 
+  var gradeId = props.player + "_unicorns"; //TODO: Change this!
+  var cornId = props.player + "_unicorns"; 
 
-    grades.push(<CardPlaceholder></CardPlaceholder>)
-    corns.push(<CardPlaceholder></CardPlaceholder>)
+  var stableDrop = (e) => {
+    console.log("stableDrop");
+    props.dropEvent(e)
+  }
+
+  grades.push(<CardPlaceholder id={gradeId} ondropProp={stableDrop}></CardPlaceholder>)
+  corns.push(<CardPlaceholder id={cornId} ondropProp={stableDrop}></CardPlaceholder>)
 
 
   return (
@@ -262,41 +314,61 @@ function Stable(props)
   );
 }
 
+function handCardsHtml(cards, playerId, dragStart, dragEnd)
+{
+  var tmp = [];
+  if (cards.length > 0)
+  {
+    cards.forEach(element => {
+      tmp.push(<Card pId={playerId} cardInfo={element} onDragStart={dragStart} onDragEnd={dragEnd} alt="handCard"></Card>)
+    });
+  }
+
+  return tmp; 
+}
+
 function Hand(props)
 {
   return(
     <p className="Hand">
-      {cardsHtml(props.cardsInHand)}
+      {handCardsHtml(props.cardsInHand, props.player, props.dragStartEvent, props.dragEndEvent)}
     </p>
   );
 }
 
 function Card(props)
 {
-  // TODO: Remove debug vars
-  var path = null;
-  var cName = null;
-  if (props.cardId === -1)
-  {
-    var id = props.cardId;
-    var c = deckJSON[id];
-    path = c.path;
-    cName = "CardThumb"
-  }
-  else
-  {
-    path = props.cardInfo["path"]
-    cName = "CardThumb zoom"
-  }
+  var cardId = props.cardInfo["id"]
+  var path = props.cardInfo["path"]
+
   return (
-    <img src={path} className={cName} onClick={props.clickFunc} alt="card" />
+    <img id={cardId + "_" + props.pId} src={path} className={"CardThumb"} onClick={props.clickFunc} onDragEnd={props.onDragEnd} onDragStart={props.onDragStart} draggable="true" alt="card" />
   );
 }
 
 function CardPlaceholder(props)
 {
+  var onDragOver = (e) => {
+    console.log("DO")
+    let event = e;
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  
+  var onFileDrop = (e) => {
+    console.log("FD")
+    let event = e;
+    event.stopPropagation();
+  
+    console.log("onFileDrop");
+    props.ondropProp(e)
+  }
+
+
   return (
-    <img src={deckJSON[-2].path} className={"CardThumb"} alt="card" />
+    <img id={props.id} src={deckJSON[-2].path} className={"CardThumb"} 
+    onDragOver={onDragOver}
+    onDrop={onFileDrop} alt="card2" />
   );
 }
 
