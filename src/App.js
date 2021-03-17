@@ -60,10 +60,30 @@ class Game extends React.Component
     draggedCardInfo = draggedCardInfo.split("_")
     var draggedCardId = draggedCardInfo[0]
     var draggedCardHand = draggedCardInfo[1]
+    var card = deckJSON[draggedCardId]
+    var cardType = null;
+
+    if (card.class === "Upgrade")
+    {
+      cardType = "upgrades"
+    }
+    else if (card.class === "Downgrade")
+    {
+      cardType = "downgrades"
+    }
+    else if (card.class === "Basic Unicorn" || card.class === "Magical Unicorn")
+    {
+      cardType = "unicorns"
+    }
+    else
+    {
+      console.log("Invalid card type " + card.class)
+      return;
+    }
 
     var a = event.currentTarget.id.split("_");
     var tmpPlayers = this.state.Players.slice()
-    tmpPlayers[a[0]].stable[a[1]].push(deckJSON[draggedCardId])
+    tmpPlayers[a[0]].stable[cardType].push(deckJSON[draggedCardId])
     
     var hand = tmpPlayers[draggedCardHand].hand;
     for (var i = 0; i < hand.length; ++i)
@@ -288,7 +308,7 @@ function stableCardsHtml(cards, dragStart, dragEnd)
 function Stable(props)
 {
   var grades = stableCardsHtml(props.ug, props.dragStartEvent, props.dragEndEvent);
-  grades.concat(stableCardsHtml(props.dg));
+  grades = grades.concat(stableCardsHtml(props.dg));
   var corns = stableCardsHtml(props.uni);
 
   var gradeId = props.player + "_unicorns"; //TODO: Change this!
@@ -342,7 +362,7 @@ function Card(props)
   var path = props.cardInfo["path"]
 
   return (
-    <img id={cardId + "_" + props.pId} src={path} className={"CardThumb"} onClick={props.clickFunc} onDragEnd={props.onDragEnd} onDragStart={props.onDragStart} draggable="true" alt="card" />
+    <img id={cardId + "_" + props.pId} src={path} className={"CardThumb"} onClick={props.clickFunc} onDragEnd={props.onDragEnd} onDragStart={props.onDragStart} draggable={props.draggable} alt="card" />
   );
 }
 
