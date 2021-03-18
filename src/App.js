@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import deckJSON from './assets/rules/deck.json'
 
+
+
 class Game extends React.Component
 {
 	constructor(props) {
@@ -55,7 +57,7 @@ class Game extends React.Component
 
   allowDrop(event)
   {
-    console.log("allowDrop")
+    //console.log("allowDrop")
     var draggedCardInfo = event.dataTransfer.getData("text/html");
     draggedCardInfo = draggedCardInfo.split("_")
     var draggedCardId = draggedCardInfo[0]
@@ -81,9 +83,9 @@ class Game extends React.Component
       return;
     }
 
-    var a = event.currentTarget.id.split("_");
+    var targetPlayer = event.currentTarget.id;
     var tmpPlayers = this.state.Players.slice()
-    tmpPlayers[a[0]].stable[cardType].push(deckJSON[draggedCardId])
+    tmpPlayers[targetPlayer].stable[cardType].push(deckJSON[draggedCardId])
     
     var hand = tmpPlayers[draggedCardHand].hand;
     for (var i = 0; i < hand.length; ++i)
@@ -311,20 +313,23 @@ function Stable(props)
   grades = grades.concat(stableCardsHtml(props.dg));
   var corns = stableCardsHtml(props.uni);
 
-  var gradeId = props.player + "_unicorns"; //TODO: Change this!
-  var cornId = props.player + "_unicorns"; 
-
   var stableDrop = (e) => {
-    console.log("stableDrop");
+    //console.log("stableDrop");
     props.dropEvent(e)
   }
 
-  grades.push(<CardPlaceholder id={gradeId} ondropProp={stableDrop}></CardPlaceholder>)
-  corns.push(<CardPlaceholder id={cornId} ondropProp={stableDrop}></CardPlaceholder>)
+  var onDragOver = (e) => {
+    //console.log("DO")
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
+  grades.push(<CardPlaceholder></CardPlaceholder>)
+  corns.push(<CardPlaceholder></CardPlaceholder>)
 
 
   return (
-    <p className="Stable">
+    <p id={props.player} className="Stable" onDragOver={onDragOver} onDrop={stableDrop}>
       {/* Up/Downgrades */}
       {grades}
       <br />
@@ -368,27 +373,8 @@ function Card(props)
 
 function CardPlaceholder(props)
 {
-  var onDragOver = (e) => {
-    console.log("DO")
-    let event = e;
-    event.stopPropagation();
-    event.preventDefault();
-  }
-  
-  var onFileDrop = (e) => {
-    console.log("FD")
-    let event = e;
-    event.stopPropagation();
-  
-    console.log("onFileDrop");
-    props.ondropProp(e)
-  }
-
-
   return (
-    <img id={props.id} src={deckJSON[-2].path} className={"CardThumb"} 
-    onDragOver={onDragOver}
-    onDrop={onFileDrop} alt="card2" />
+    <img src={deckJSON[-3].path} className={"CardThumb"} alt="card2" />
   );
 }
 

@@ -587,6 +587,13 @@
         "path": "./images/83_Super Neigh",
         "id": "83"
     },
+    "-3": {
+        "name": "Blank Card",
+        "class": "Meta",
+        "count": "0",
+        "path": "./images/-3_blank",
+        "id": "-3"
+    },
     "-2": {
         "name": "Card Border",
         "class": "Meta",
